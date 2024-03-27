@@ -12,11 +12,19 @@ Create tiff image from a list of images.
 - Pip: ^24.0
 
 ## Installation
-1. Install dependencies:
+1. Clone the repository
+```sh
+git clone https://github.com/kolserdav/create-tiff.git
+```
+2. Change working catalog
+```sh
+cd create-tiff
+```
+3. Install dependencies:
 ```sh
 pip install -r requirements.txt 
 ```
-2. Copy file `.env.example` to `.env`
+4. Copy file `.env.example` to `.env`
 
 ## Configuration
 Edit file `.env`:
