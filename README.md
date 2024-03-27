@@ -1,5 +1,10 @@
 # Create TIFF
-Create tiff image from a list of images
+Create tiff image from a list of images.
+
+
+## Possibilities
+- Flexible size of composite images
+- Adjusting the dimensions of the resulting image
 
 ## Requirements
 - Python: ^3.11.8

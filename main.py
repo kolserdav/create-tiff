@@ -7,6 +7,7 @@ from typing import List
 load_dotenv()
 
 # Constants
+SHIFT_STEP = 10
 RESULT_FILE_NAME='result.tif'
 ERROR = '[ERROR]'
 INFO = '[INFO]'
@@ -39,6 +40,7 @@ def read_images_dir(path: str):
     if isfile(full_path):
       files.append(full_path)
     else:
+      # Recursive
       for _item in read_images_dir(full_path):
         files.append(_item)
   print(INFO, 'Read directory:', path)
@@ -52,11 +54,12 @@ def get_max_sizes(length: int, shift: int):
   row_count = int(WIDTH / width)
   col_count = int(HEIGHT / height)
   if (row_count * col_count < length):
-    return get_max_sizes(length, shift + 10)
+    # Recursive
+    return get_max_sizes(length, shift + SHIFT_STEP)
   shift_x = int((WIDTH - width * row_count) / row_count)
   shift_y = int((HEIGHT - height * col_count) / col_count)
   res = (width, height, row_count, shift_x, shift_y)
-  print(INFO, 'Items sizes:', res)
+  print(INFO, 'Items sizes (width, height, row_count, shift_x, shift_y):', res)
   return res
 
 
